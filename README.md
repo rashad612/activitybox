@@ -3,16 +3,15 @@
 This project was originally created in my process to learn node stuff.
 It was inspired by eCommerce sites, when they put an active box, showing what items are being bought now. However it can be used for any other live purposes.
 
+This package just provides you with basic functionality. You still need to create your own client-side scripts, to show data. 
+
 This module creates a RESTful API server, and socket.io listner. Any app should post `json` data to the API, and socket listener will update the client immediately.
 It uses `redis` Pub/Sub methods, so you must have redis server running.
 
 Please note work is still in early stages.
 
 ### Installation
-```
-$ npm install activitybox
-```
-or:
+
 Clone/download the project, then:
 ```
 $ cd activitybox
