@@ -1,0 +1,5 @@
+logs
+*.log
+node_modules
+*.sublime-project
+*.sublime-workspace
