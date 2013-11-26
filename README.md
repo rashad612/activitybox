@@ -12,7 +12,10 @@ Please note work is still in early stages.
 
 ### Installation
 
-Clone/download the project, then:
+```
+$ npm install activitybox
+```
+or clone/download the project, then:
 ```
 $ cd activitybox
 $ npm install
