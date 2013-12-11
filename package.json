@@ -9,9 +9,11 @@
   },
   "keywords": [
     "socket.io",
-    "live-views",
+    "websocket",
+    "socket",
+    "realtime",
     "activity",
-    "pub/sub"
+    "pubsub"
   ],
   "repository": {
     "type": "git",
