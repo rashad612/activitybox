@@ -39,6 +39,3 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"channel": "ch1", "item"
 
 ```
 
-### TODOs
-- [ ] More configuration options for Redis.
-- [ ] Include tests ( Grunt + Mocha ).
