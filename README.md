@@ -15,13 +15,19 @@ Please note work is still in early stages.
 ```
 $ npm install activitybox
 ```
-or clone/download the project, then:
-```
-$ cd activitybox
-$ npm install
+
+### Usage
+
+```node
+var app = require('activitybox');
+app.configure('config.json');
+app.run();
 ```
 
-### Configuration and Run
+Run tests:
+```bash
+$ npm test
+```
 You can modify `config.js` as needed.
 Run:
 ```

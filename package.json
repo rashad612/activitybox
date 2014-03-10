@@ -1,11 +1,12 @@
 {
   "name": "activitybox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Activity Box",
   "author": "Rashad Majali <rashad.612@gmail.com>",
-  "main": "app.js",
+  "main": "./index",
   "scripts": {
-    "test": "make test"
+    "test": "./node_modules/.bin/mocha --reporter=spec --ui=bdd",
+    "test-w": "/.node_modules/.bin/mocha --reporter=spec --ui=bdd --watch"
   },
   "keywords": [
     "socket.io",
@@ -23,13 +24,18 @@
     "url": "https://github.com/rashad612/activitybox/issues"
   },
   "dependencies": {
-    "socket.io": "0.9.x",
-    "restify": "2.6.x",
-    "redis": "0.9.x"
+    "socket.io": "^0.9.16",
+    "restify": "^2.6.2",
+    "redis": "^0.9.2",
+    "nconf": "^0.6.9",
+    "sinon": "^1.9.0"
   },
   "devDependencies": {
-    "grunt": "0.4.2",
-    "mocha": "1.14.x"
+    "mocha": "^1.17.1",
+    "chai": "^1.9.0",
+    "supertest": "^0.9.0",
+    "chai-json-schema": "^1.0.10",
+    "redis-mock": "^0.2.0"
   },
   "engine": {
     "node": ">=0.10"

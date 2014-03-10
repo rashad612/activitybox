@@ -1,0 +1,11 @@
+{
+  "server": {
+    "name": "activity-box",
+    "port": 9000
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "channel": "my-channel"
+  }
+}

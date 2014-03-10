@@ -6,7 +6,7 @@
     <script type="text/javascript">
       (function($) {
         $(function() {
-          var socket = io.connect('http://localhost:9000/stream/ch1');
+          var socket = io.connect('http://localhost:9000/stream/my-channel');
           socket.on('stream', function(data) {
             console.log(data);
           });
