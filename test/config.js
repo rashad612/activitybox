@@ -1,9 +1,7 @@
 'use strict';
 
 var path = require('path'),
-    chai = require('chai'),
-    expect = require('chai').expect,
-    sinon = require('sinon');
+	expect = require('chai').expect;
 
 var configUtil = require('../lib/configUtil');
 
@@ -14,12 +12,6 @@ describe('config', function() {
   beforeEach(function() {
     configUtil.init('config.json');
   });
-
-  afterEach(function() {
-    config = null;
-  });
-
-
 
   it('should accept new config file', function() {
     configUtil.init('config.example.json');

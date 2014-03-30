@@ -1,5 +1,7 @@
 ## Activity Box
 
+**Code is under heavy development!**
+
 This project was originally created in my process to learn node stuff.
 It was inspired by eCommerce sites, when they put an active box, showing what items are being bought now. However it can be used for any other live purposes.
 
@@ -12,7 +14,7 @@ Please note work is still in early stages.
 
 ### Installation
 
-```
+```bash
 $ npm install activitybox
 ```
 
@@ -24,14 +26,10 @@ app.configure('config.json');
 app.run();
 ```
 
+```
 Run tests:
 ```bash
 $ npm test
-```
-You can modify `config.js` as needed.
-Run:
-```
-node app.js
 ```
 
 ### Example

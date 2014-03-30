@@ -5,9 +5,18 @@ var expect = require('chai').expect,
     channel = require('../lib/channel');
 
 describe('pubsub channel', function() {
-  var channel, publisher, subscriber;
-  before(function(done) {
-    channel = 'my-channel';
+  var channelName, publisher, subscriber;
+
+  before(function() {
+    channelName = 'my-channel';
+  });
+
+  after(function() {
+    channelName = null;
+  });
+  
+  beforeEach(function(done) {
+    
     publisher = redis.createClient();
     
     publisher.on('ready', function() {
@@ -18,28 +27,38 @@ describe('pubsub channel', function() {
     });
   });
 
-  after(function() {
-    channel = null;
+  afterEach(function() {
+    
     publisher.end();
     subscriber.end();
   });
 
   it('should allow client to subscribe to channel', function(done) {
-    subscriber.on('subscribe', function(channelName) {
-      console.log('subscribe');
-      expect('').to.equal(channel);
+    var callback = function(ch) {
+      expect(ch).to.equal(channelName);
       done();
-    });
-    channel.sub(subscriber, channel);
+    };
+
+    channel.sub(subscriber, channelName, callback);
   });
 
-  // it('should allow subscribers to receive published messages', function(done) {
-  //   var message = 'test';
-  //   var spy = sinon.spy();
+  it('should allow client to unsubscribe from channel', function(done) {
+    var callback = function(ch) {
+      expect(ch).to.equal(channelName);
+      done();
+    };
+    channel.unsub(subscriber, channelName, callback);
+  });
 
-  //   channel.sub(subscriber, 'my-channel', spy);
-  //   channel.pub(publisher, 'my-channel', 'test');
-  //   console.log(spy.calledWith(message));
-  //   // expect(spy.calledWith(message)).to.be.ok();
-  // });
+  it('should allow subscribers to receive published messages', function(done) {
+    var message = 'test';
+    
+    var callback = function(msg) {
+      expect(msg).to.equal(message);
+      done();
+    };
+
+    channel.sub(subscriber, channelName, false, callback);
+    channel.pub(publisher, channelName, 'test');
+  });
 });
