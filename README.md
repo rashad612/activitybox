@@ -20,13 +20,12 @@ $ npm install activitybox
 
 ### Usage
 
-```node
+```javascript
 var app = require('activitybox');
 app.configure('config.json');
 app.run();
 ```
 
-```
 Run tests:
 ```bash
 $ npm test
