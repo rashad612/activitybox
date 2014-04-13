@@ -1,4 +1,4 @@
-## Activity Box
+## Activity Box [![Build Status](https://travis-ci.org/rashad612/activitybox.svg?branch=master)](https://travis-ci.org/rashad612/activitybox)
 
 **Code is under heavy development!**
 
