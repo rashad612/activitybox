@@ -35,7 +35,7 @@ $ npm test
 ### Example
 To run client, open the following file statically in browser:
 ```
-tests/client.html
+test/client.example.html
 ```
 To post data to the API, using cURL:
 ```bash
