@@ -1,7 +1,8 @@
 {
   "server": {
     "name": "activity-box",
-    "port": 9000
+    "port": 9000,
+    "streamURI": "stream"
   },
   "redis": {
     "host": "127.0.0.1",

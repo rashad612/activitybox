@@ -14,7 +14,7 @@ describe('config', function() {
   });
 
   it('should accept new config file', function() {
-    configUtil.init('config.example.json');
+    configUtil.init('test/fixtures/config.example.json');
     expect(configUtil.get('redis:host')).to.equal('127.0.0.2');
   });
 

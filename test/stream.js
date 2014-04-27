@@ -1,5 +1,5 @@
 var expect = require('chai').expect,
-    http = require('http'),
+    restify = require('restify'),
     io = require('socket.io-client'),
     stream = require('../lib/stream');
 
@@ -13,7 +13,7 @@ describe('stream', function() {
     // emitter,
   
   before(function() {
-    fakeServer = http.createServer();
+    fakeServer = restify.createServer();
     fakeServer.listen(port);
     client = io.connect(socketURL);
   });
@@ -32,9 +32,8 @@ describe('stream', function() {
       done();
     });
 
-    stream.start(fakeServer, route, channelName, function(callback) {
-      callback(fakeData);
-    });
+    stream.start(fakeServer, route, channelName);
+    stream.emit(fakeData);
    
   });
 });

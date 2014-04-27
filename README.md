@@ -41,3 +41,5 @@ Example: Post data to the API, using cURL:
 ```bash
 $ curl -X POST -H "Content-Type: application/json" -d '{"channel": "ch1", "item": {"title": "t1", "image": "t1.png", "link": "/t1"}}' http://localhost:9000/push
 ```
+### License
+MIT

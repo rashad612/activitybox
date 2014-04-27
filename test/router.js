@@ -1,7 +1,5 @@
 var restify = require('restify'),
     request = require('supertest'),
-    sinon = require('sinon'),
-    expect = require('chai').expect,
     Router = require('../lib/router');
     
 describe('router', function() {
@@ -23,7 +21,7 @@ describe('router', function() {
 
   it('should dispatch route controller', function(done) {
     var testPath = '/test-controller';
-    var controller = router.route(testPath);
+    var controller = router.dispatch(testPath);
     
     fakeServer.get(testPath, controller);
 
@@ -36,7 +34,7 @@ describe('router', function() {
 
   it('should return "page not found" for non-existed controllers', function(done) {
     var testPath = '/non-existed';
-    var controller = router.route(testPath);
+    var controller = router.dispatch(testPath);
 
     fakeServer.get(testPath, controller);
 
