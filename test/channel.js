@@ -16,9 +16,7 @@ describe('pubsub channel', function() {
   });
   
   beforeEach(function(done) {
-    
     publisher = redis.createClient();
-    
     publisher.on('ready', function() {
       subscriber = redis.createClient();
       subscriber.on('ready', function() {
@@ -28,7 +26,6 @@ describe('pubsub channel', function() {
   });
 
   afterEach(function() {
-    
     publisher.end();
     subscriber.end();
   });

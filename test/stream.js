@@ -10,7 +10,6 @@ describe('stream', function() {
     socketURL = 'http://localhost:' + port + '/' + route + '/' + channelName,
     fakeServer,
     client;
-    // emitter,
   
   before(function() {
     fakeServer = restify.createServer();
@@ -25,15 +24,14 @@ describe('stream', function() {
 
   it('should broadcast updates to clients', function(done) {
     var fakeData = '{"title": "t1", "image": "t1.png", "link": "/t1"}';
-     client.on(route, function(data) {
+    client.on(route, function(data) {
       expect(data).to.have.property('title').that.equal('t1');
       expect(data).to.have.property('image').that.equal('t1.png');
       expect(data).to.have.property('link').that.equal('/t1');
       done();
     });
-
-    stream.start(fakeServer, route, channelName);
-    stream.emit(fakeData);
-   
+    stream(fakeServer, route, channelName, function(next) {
+      next(fakeData);
+    });
   });
 });

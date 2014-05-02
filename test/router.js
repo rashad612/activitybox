@@ -40,7 +40,6 @@ describe('router', function() {
 
     request(fakeServer)
       .get(testPath)
-      .set('Accept', 'text/plain')
       .expect(404, done);
   });
 });
