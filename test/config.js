@@ -5,18 +5,19 @@ var path = require('path'),
 
 var configUtil = require('../lib/configUtil');
 
-var config;
 describe('config', function() {
   
-  beforeEach(function() {
-    configUtil.init('test/fixtures/config.example.json');
+  afterEach(function() {
+    configUtil.reset();
   });
 
   it('should accept new config file', function() {
+    configUtil.init('test/fixtures/config.example.json');
     expect(configUtil.get('redis:host')).to.equal('127.0.0.2');
   });
 
   it('should be modified safely', function() {
+    configUtil.init();
     configUtil.set('server:name', 'localhost');
     configUtil.set('server:port', 3000);
     
