@@ -24,7 +24,7 @@ app.run();
 
 Run app using custom configuration:
 ```javascript
-var app.require('activitybox');
+var app = require('activitybox');
 app.run('path/to/my-config.json');
 ```
 
