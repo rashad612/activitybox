@@ -1,4 +1,4 @@
-## Activity Box [![Build Status](https://travis-ci.org/rashad612/activitybox.svg?branch=master)](https://travis-ci.org/rashad612/activitybox)
+## Activity Box [![Build Status](https://travis-ci.org/rashad612/activitybox.svg?branch=master)](https://travis-ci.org/rashad612/activitybox) [![Coverage Status](https://coveralls.io/repos/rashad612/activitybox/badge.png)](https://coveralls.io/r/rashad612/activitybox)
 
 Live updates, and subscriber/publisher implementation encapsulated in RESTful box.
 
